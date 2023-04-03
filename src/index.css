@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.make_them_center {
+  width: 20%;
+  margin: auto;
+}
+.hotel {
+  background-image: url("./assets/colonial-style-house-night-scene.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(42, 48, 41, 0.867);
+}
+.centralize_it {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mobile__view {
+  display: none;
+}
+
+.slider_image {
+  width: 100%;
+  height: 60%;
+  margin: auto;
+}
+.slider {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  height: 100%;
+}
+.text_slider {
+  position: absolute;
+  top: 100px;
+}
+
+.left-ticket {
+  border-left: 3px dotted #635c5c;
+}
+
+/* formdata input */
+.input_data {
+  display: flex;
+  flex-direction: column;
+  margin: 10 0;
+}
+.input_data > label {
+  font-size: 1.5rem;
+  color: rgb(79, 78, 78);
+}
+.input_data > input {
+  padding: 10px;
+  background-color: rgb(223, 223, 223);
+  outline: none;
+}
+.input_data > select {
+  padding: 10px;
+  background-color: rgb(223, 223, 223);
+  outline: none;
+}
+.primary__button {
+  padding: 10px;
+  color: white;
+  margin: 15px 0;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+.loaderx {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(241, 242, 243);
+}
+@media screen and (max-width: 600px) {
+  .mobile_visiblity {
+    /*  */
+  }
+
+  .slider {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    height: 100%;
+  }
+  .text_slider {
+    position: absolute;
+    top: 200px;
+  }
+  .relative_post {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+  .text_slider {
+    position: absolute;
+    top: 2px;
+    font-size: 20px;
+  }
+  .menu_function {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .small_screen {
+    text-align: center;
+    margin: auto;
+    align-items: center;
+  }
+  .footer_social_media {
+    width: 70%;
+    margin: auto;
+  }
+}
