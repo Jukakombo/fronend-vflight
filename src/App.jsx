@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import BookingDetail from "./components/BookingDetail";
 import SearchAirline from "./components/SearchAirline";
 
@@ -14,6 +14,8 @@ import Database from "./components/Database";
 import { useState } from "react";
 import xloader from "./assets/x.svg";
 function App() {
+  const passenger = localStorage.getItem("passenger");
+  const passengerStorage = JSON.parse(passenger);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -44,7 +46,17 @@ function App() {
             <Route path="/create-account" exact element={<Membership />} />
             <Route path="/login" exact element={<Membership />} />
             <Route path="/seat-selection" exact element={<Register />} />
-            <Route path="/payment" exact element={<PaymentScreen />} />
+            <Route
+              path="/payment"
+              exact
+              element={
+                passengerStorage.length < 1 ? (
+                  <Navigate replace to="/vflight" />
+                ) : (
+                  <PaymentScreen />
+                )
+              }
+            />
             <Route path="/database" exact element={<Database />} />
 
             <Route path="/reservation/:id" exact element={<Reservation />} />

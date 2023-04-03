@@ -95,7 +95,7 @@ function OrderSummary() {
           </div>
         </Paper>
         <ListItem className="w-full m-auto">
-          <AddPaypalButton1 amount={amount} />
+          {amount && <AddPaypalButton1 amount={amount} />}
         </ListItem>
       </div>
       <Footer4 />

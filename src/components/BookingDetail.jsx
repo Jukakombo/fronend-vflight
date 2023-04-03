@@ -3,6 +3,7 @@ import React from "react";
 import { GiCommercialAirplane } from "react-icons/gi";
 
 import { exportComponentAsPNG } from "react-component-export-image";
+import { Link } from "react-router-dom";
 function BookingDetail() {
   return (
     <div>
@@ -87,6 +88,15 @@ class MyComponent extends React.Component {
             >
               Download your Ticket
             </button>
+            <h1 className="text-red-700">
+              Please don't forget to download your ticket before press the
+              button close!
+            </h1>
+            <Link to="/">
+              <button className="bg-green-400 font-bold text-white py-2 px-4 rounded-[20px] ml-2">
+                Close
+              </button>
+            </Link>
           </div>
         </div>
       </React.Fragment>
