@@ -4,10 +4,12 @@ import { PayPalButton } from "react-paypal-button-v2";
 import Loader from "./Loader";
 import { createRegistration } from "../actions/registration";
 import { Link, useNavigate } from "react-router-dom";
+import BookingDetail from "../components/BookingDetail";
 
 const AddPaypalButton1 = ({ order, amount }) => {
   const [sdkReady, setSdkReady] = useState(false);
   const [sucessfullPayment, setSucessfullPayment] = useState(false);
+  const { purchase_units } = sucessfullPayment;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,15 +53,18 @@ const AddPaypalButton1 = ({ order, amount }) => {
     const formData = order.paymentMethod;
     dispatch(createRegistration({ paymentResult, formData, navigate }));
   };
+  {
+    /* <Link to="/">
+    <button className="bg-green-400 font-bold text-white p-2 rounded-[20px]">
+      Download your Receipt
+    </button>
+  </Link> */
+  }
 
   return (
-    <div>
+    <div className="w-[100%] m-auto">
       {sucessfullPayment ? (
-        <Link to="/">
-          <button className="bg-green-400 font-bold text-white p-2 rounded-[20px]">
-            Download your Receipt
-          </button>
-        </Link>
+        <BookingDetail purchase_units={purchase_units} />
       ) : (
         <div>
           {loadingPay && <Loader />}

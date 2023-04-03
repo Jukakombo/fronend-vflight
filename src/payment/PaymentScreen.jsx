@@ -44,16 +44,8 @@ function OrderSummary() {
 
       <div className="container">
         <Paper>
-          <Grid container>
-            <Grid
-              // key={_id}
-              item
-              lg={8}
-              md={4}
-              xs={12}
-              component="div"
-              style={{ border: "1px solid whiteSmoke" }}
-            >
+          <div>
+            <div>
               <ListItem>
                 {" "}
                 <Typography variant="h5">
@@ -86,20 +78,9 @@ function OrderSummary() {
                   Arrival Time: {arrivalTime}hr
                 </ListItem>
               </div>
-            </Grid>
+            </div>
 
-            <Grid
-              item
-              lg={4}
-              md={4}
-              xs={12}
-              component="div"
-              style={{
-                border: "1px solid whiteSmoke",
-                width: "100%",
-                margin: "auto",
-              }}
-            >
+            <div className="w-full text-center grid sm:grid-cols-2 gap-4">
               <ListItem>
                 <Typography variant="h5">Sammary Info</Typography>
               </ListItem>
@@ -110,12 +91,12 @@ function OrderSummary() {
                   <strong>Total Amount:</strong>${amount}
                 </p>
               </ListItem>
-              <ListItem>
-                <AddPaypalButton1 amount={amount} />
-              </ListItem>
-            </Grid>
-          </Grid>
+            </div>
+          </div>
         </Paper>
+        <ListItem className="w-full m-auto">
+          <AddPaypalButton1 amount={amount} />
+        </ListItem>
       </div>
       <Footer4 />
     </>

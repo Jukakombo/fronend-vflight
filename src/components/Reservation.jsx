@@ -11,6 +11,7 @@ import { useEffect } from "react";
 function Reservation() {
   const { id } = useParams();
   const reservationDetail = flightDetail.find((x) => x.id === id);
+  const [isSubmiting, setIsSubmiting] = useState(false);
   const initialState = {
     firstName: "",
     lastName: "",
@@ -75,10 +76,11 @@ function Reservation() {
     };
     sanityClient.create(passenger);
     localStorage.setItem("passenger", JSON.stringify(passenger));
-
+    setIsSubmiting(true);
     setTimeout(() => {
       navigate("/payment");
-    }, 7000);
+      setIsSubmiting(false);
+    }, 3000);
 
     clearField();
   };
@@ -365,7 +367,7 @@ function Reservation() {
               </select>
             </div>
             <button className="primary__button bg-green-400 md:mt-8">
-              Submit
+              {isSubmiting ? "Submiting..." : "Submit"}
             </button>
           </form>
         </div>
