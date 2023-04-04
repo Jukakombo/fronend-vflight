@@ -62,7 +62,7 @@ class MyComponent extends React.Component {
                   <p>From:{this.props.passengerStorage?.from}</p>
                   <p>To:{this.props.passengerStorage?.to}</p>
                   <p>Date:{this.props.passengerStorage?.date}</p>
-                  <p>Ticket No:</p>
+                  <p>Ticket No:{this.props.passengerStorage?.id}</p>
                 </div>
                 <div className="left-ticket p-4">
                   <h1>
@@ -71,7 +71,7 @@ class MyComponent extends React.Component {
                   <h1>
                     Arrival Time:{this.props.passengerStorage?.arrivalTime}
                   </h1>
-                  <h1>Seat No: 0001</h1>
+                  <h1>Seat No: {this.props.passengerStorage?.FlightNo}</h1>
                   <h1>Flight: {this.props.passengerStorage?.company}</h1>
                 </div>
               </div>
