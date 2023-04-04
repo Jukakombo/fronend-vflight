@@ -50,7 +50,7 @@ function App() {
               path="/payment"
               exact
               element={
-                passengerStorage.length < 1 ? (
+                !passengerStorage ? (
                   <Navigate replace to="/vflight" />
                 ) : (
                   <PaymentScreen />
